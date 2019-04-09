@@ -1,6 +1,6 @@
 <p align="center"><img src="tbsbooks.jpg"></p>
 
-## TB's Books!
+# TB's Books!
 
 Welcome to this simple site where you can search books you want to read and add them to your reading list. Simply delete items or change items on the list as you go.
 
