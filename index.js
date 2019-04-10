@@ -1,5 +1,7 @@
 $(document).ready(function() {
   $("#myForm").submit(function() {
+    $( ".searchResultDiv" ).remove();
+
     var search = $("#booksText").val();
 
     if (search == "") {
@@ -29,12 +31,16 @@ $(document).ready(function() {
               response.items[i].volumeInfo.infoLink +
               '><button id="imagebutton">Read More</button></a></img>'
           );
+          bookDiv = $(
+            `<div class="searchResultDiv" id="book-container${i}"></div>`
+          );
           url = response.items[i].volumeInfo.imageLinks.thumbnail;
           img.attr("src", url); //attaches image url
 
-          title.appendTo("#result");
-          author.appendTo("#result");
-          img.appendTo("#result");
+          bookDiv.appendTo("#result");
+          title.appendTo(`#book-container${i}`);
+          author.appendTo(`#book-container${i}`);
+          img.appendTo(`#book-container${i}`);
         }
       });
     }

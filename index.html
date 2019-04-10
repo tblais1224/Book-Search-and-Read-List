@@ -5,31 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="styles.css" rel="stylesheet" />
     <title>TB's Books</title>
-
 </head>
 
 <body>
-    <h1 align="center"><img src="tbsbooks.jpg"></h1>
-    <h1 class="title">TB's Books</h1>
-    <p>Books for the PEOPLE</p>
     <div id="wrapper">
         <header>
             <div id="page-banner">
+                <div><img src="tbsbooks.jpg"></div>
+                <h1 class="title">TB's Books</h1>
+                <p>Books for the PEOPLE</p>
                 <form id="myForm" onsubmit="return false">
                     <div class="input-field">
-                        <input type="search" id='booksText' />
-                        <label for="search">Search Books...</label>
+                        <input type="search" id='booksText' placeholder="Search Books..." />
                     </div>
-                    <button class="btn-searchBooks">Search Books</button>
+                    <button class="btn-searchBooks">Submit Search</button>
                 </form>
             </div>
             <div id='result'>
-
+                <!-- this is where the search results are inserted -->
             </div>
         </header>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="index.js"></script>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="index.js"></script>
 </body>
 
 </html>
