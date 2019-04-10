@@ -1,6 +1,6 @@
 $(document).ready(function() {
   $("#myForm").submit(function() {
-    $( ".searchResultDiv" ).remove();
+    $(".searchResultDiv").remove();
 
     var search = $("#booksText").val();
 
@@ -31,6 +31,9 @@ $(document).ready(function() {
               response.items[i].volumeInfo.infoLink +
               '><button id="imagebutton">Read More</button></a></img>'
           );
+          addToRead = $(
+            '<div class="addToReadDiv"><button id="addToReadbutton">Add to Read List</button></div>'
+          );
           bookDiv = $(
             `<div class="searchResultDiv" id="book-container${i}"></div>`
           );
@@ -41,9 +44,9 @@ $(document).ready(function() {
           title.appendTo(`#book-container${i}`);
           author.appendTo(`#book-container${i}`);
           img.appendTo(`#book-container${i}`);
+          addToRead.appendTo(`#book-container${i}`);
         }
       });
     }
   });
-  return false;
 });
