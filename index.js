@@ -1,6 +1,10 @@
+//script is called in the head so it is ready at all times
 $(document).ready(function() {
+  //this is a function to call on submitting the search field
   $("#myForm").submit(function() {
-    $(".searchResultDiv").remove();
+    //remove the .result div on submission if old search results exist
+
+    $("#result").remove();
 
     var search = $("#booksText").val();
 
@@ -16,6 +20,7 @@ $(document).ready(function() {
         response
       ) {
         for (let i = 0; i < response.items.length; i++) {
+          results = $('<div id="result"></div>');
           title = $(
             '<h5 class="center-align">' +
               response.items[i].volumeInfo.title +
@@ -31,15 +36,29 @@ $(document).ready(function() {
               response.items[i].volumeInfo.infoLink +
               '><button id="imagebutton">Read More</button></a></img>'
           );
-          addToRead = $(
-            '<div class="addToReadDiv"><button id="addToReadbutton">Add to Read List</button></div>'
-          );
-          bookDiv = $(
-            `<div class="searchResultDiv" id="book-container${i}"></div>`
-          );
           url = response.items[i].volumeInfo.imageLinks.thumbnail;
           img.attr("src", url); //attaches image url
 
+          addToRead = $(
+            `<button class="addToReadButton${i}" type="button">Add to Read List</button>`
+          );
+          bookDiv = $(
+            `<div class="searchResultDiv" id="book-container${i}">
+            <script type="text/javascript">
+            $(document).ready(function () {
+                function notify() {        
+                    $("#book-container${i}").appendTo(".wantToReadContainer");
+                    $('<button class="removeButton" id="removeButton${i}" type="button">Remove From List</button>').appendTo("#book-container${i}");
+                    $("#result").remove();
+                    $(".addToReadButton${i}").remove();
+                    
+                }
+                $(".addToReadButton${i}").on("click", notify);
+            });
+        </script>
+        </div>`
+          );
+          results.appendTo("header");
           bookDiv.appendTo("#result");
           title.appendTo(`#book-container${i}`);
           author.appendTo(`#book-container${i}`);

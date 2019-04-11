@@ -1,40 +1,65 @@
-header{
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items: center;
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-#result{
-    display: flex;
-    flex-direction: row;
-    flex-wrap:wrap;
-    justify-content: space-around;
+#result {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
-.searchResultDiv{
-    border: solid red 2px;
-    border-radius: 3px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap:wrap;
-    margin: 10px;
-    justify-content: space-around;
-    align-items: center;
-    padding: 10px;
-    width: 175px;
+.searchResultDiv {
+  border: solid red 2px;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin: 10px;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+  width: 175px;
 }
 
-#page-banner{
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items: center;
+#page-banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-#myForm{
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items: center;
+#myForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wantToReadContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+}
+
+#logo {
+  width: 50%;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#wantToRead-h1{
+    width:100%;
+}
+
+button{
+    margin: 10px
 }
