@@ -51,8 +51,8 @@ $(document).ready(function() {
                     $('<button class="removeButton" id="removeButton${i}" type="button">Remove From List</button>').appendTo("#book-container${i}");
                     $("#result").remove();
                     $(".addToReadButton${i}").remove();
-                    
                 }
+                
                 $(".addToReadButton${i}").on("click", notify);
             });
         </script>
@@ -68,4 +68,7 @@ $(document).ready(function() {
       });
     }
   });
+});
+$(document).on("click", ".removeButton", function () {
+  $(this).parent().remove();
 });
